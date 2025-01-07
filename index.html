@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    
+    <nav>
+        <div class="logo">
+            <div class="logo-image">
+                <img src="/fotos/logo.png" alt="">
+            </div>
+        </div>
+        <div class="menu-items">
+            <ul class="navLinks">
+                <li class="navList active">
+                    <a href="#" onclick="showSection('dados')">
+                        <ion-icon name="home-outline"></ion-icon>
+                        <span class="links">Dados</span>
+                    </a>
+                </li>
+                <li class="navList">
+                    <a href="#" onclick="showSection('content')">
+                        <ion-icon name="cloud-download-outline"></ion-icon>
+                        <span class="links">Arquivos</span>
+                    </a>
+                </li>
+                <li class="navList">
+                    <a href="#" onclick="showSection('analytics')">
+                        <ion-icon name="analytics-outline"></ion-icon>
+                        <span class="links">Analytics</span>
+                    </a>
+                </li>
+                <li class="navList">
+                    <a href="#" onclick="showSection('permissions')">
+                        <ion-icon name="people-circle-outline"></ion-icon>
+                        <span class="links">Permissões</span>
+                    </a>
+                </li>
+                <li class="navList">
+                    <a href="#" onclick="showSection('comments')">
+                        <ion-icon name="chatbubbles-outline"></ion-icon>
+                        <span class="links">Comentários</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="bottom-link">
+                <li>
+                    <a href="#">
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                        <span class="links">Perfil Admin</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <ion-icon name="log-out-outline"></ion-icon>
+                        <span class="links">Sair</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <div class="container">
+            <div class="overview">
+                <div class="title">
+                    <ion-icon name="speedometer"></ion-icon>
+                    <span class="text">Dados Gerais</span>
+                </div>
+                <div class="boxes">
+                    <div class="box box1">
+                        <ion-icon name="eye-outline"></ion-icon> 
+                        <div class="text">Visualizações</div>
+                        <div class="number" data-target="1500">0</div>
+                    </div>
+                    <div class="box box2">
+                        <ion-icon name="people-outline"></ion-icon> 
+                        <div class="text">Usuários Ativos</div>
+                        <div class="number" data-target="800">0</div>
+                    </div>
+                    <div class="box box3">
+                        <ion-icon name="checkmark-circle-outline"></ion-icon> 
+                        <div class="text">Atividades</div>
+                        <div class="number" data-target="300">0</div>
+                    </div>
+                    <div class="box box4">
+                        <ion-icon name="person-add-outline"></ion-icon> 
+                        <div class="text">Clientes Implementados</div>
+                        <div class="number" data-target="500">0</div>
+                    </div>
+                               
+                </div> 
+            </div>
+
+            
+            <div class="data-table activityTable" id="dados">
+                <div class="title">
+                    <ion-icon name="time-outline"></ion-icon>
+                    <span class="text">Atividades Recentes</span>
+                </div>
+                <div class="activity-cards">
+                    <div class="activity-card">
+                        <p><strong>Nova Integração</strong></p>
+                        <p>Integrado com o sistema de pagamentos</p>
+                        <span>Hoje, 10:30 AM</span>
+                    </div>
+                    <div class="activity-card">
+                        <p><strong>Atualização de Permissões</strong></p>
+                        <p>Permissões de usuário atualizadas</p>
+                        <span>Ontem, 4:45 PM</span>
+                    </div>
+                    <div class="activity-card">
+                        <p><strong>Bug Resolvido</strong></p>
+                        <p>Correção de erro na dashboard</p>
+                        <span>25 de Out, 2:15 PM</span>
+                    </div>
+                    <div class="activity-card">
+                        <p><strong>Novo Usuário Adicionado</strong></p>
+                        <p>Usuário Maria Silva foi adicionado</p>
+                        <span>24 de Out, 11:05 AM</span>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="data-table" id="content" style="display:none;">
+                <div class="title">
+                    <ion-icon name="folder-outline"></ion-icon>
+                    <span class="text">Arquivos</span>
+                </div>
+                <div class="file-list">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nome do Arquivo</th>
+                                <th>Data de Criação</th>
+                                <th>Tamanho</th>
+                                <th>Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Documento_Importante.pdf</td>
+                                <td>2024-10-20</td>
+                                <td>1.5 MB</td>
+                                <td><a href="#" class="download-btn">Baixar</a></td>
+                            </tr>
+                            <tr>
+                                <td>Relatório_Anual.xlsx</td>
+                                <td>2024-10-18</td>
+                                <td>2.3 MB</td>
+                                <td><a href="#" class="download-btn">Baixar</a></td>
+                            </tr>
+                            <tr>
+                                <td>Apresentação.pptx</td>
+                                <td>2024-10-15</td>
+                                <td>5.0 MB</td>
+                                <td><a href="#" class="download-btn">Baixar</a></td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+
+            
+            <div class="data-table" id="analytics" style="display:none;">
+                <div class="title">
+                    <ion-icon name="analytics-outline"></ion-icon>
+                    <span class="text">Analytics</span>
+                </div>
+            
+                <div class="analytics-cards">
+                    <div class="card">
+                        <h3>Total de Usuários</h3>
+                        <span>3,250</span>
+                    </div>
+                    <div class="card">
+                        <h3>Atividades Hoje</h3>
+                        <span>1,200</span>
+                    </div>
+                    <div class="card">
+                        <h3>Taxa de Conversão</h3>
+                        <span>4.5%</span>
+                    </div>
+                </div>
+            
+                <div class="charts">
+                    <h4>Crescimento de Usuários</h4>
+                    <canvas id="userGrowthChart"></canvas> 
+                </div>
+            
+                <div class="recent-activities">
+                    <h4>Atividades Recentes</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Usuário</th>
+                                <th>Atividade</th>
+                                <th>Data</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Maria Silva</td>
+                                <td>Comentou em Post</td>
+                                <td>Hoje, 10:30 AM</td>
+                            </tr>
+                            <tr>
+                                <td>João Pereira</td>
+                                <td>Criou Novo Conteúdo</td>
+                                <td>Ontem, 4:45 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Ana Costa</td>
+                                <td>Interagiu com Post</td>
+                                <td>25 de Out, 2:15 PM</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+<div class="data-table permissions-section" id="permissions" style="display:none;">
+    <div class="title">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        <span class="text">Permissões</span>
+    </div>
+   <div class="permissions-list">
+    <table>
+        <thead>
+            <tr>
+                <th>Usuário</th>
+                <th>Permissão</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Maria Silva</td>
+                <td>
+                    <select>
+                        <option value="view">Visualizar</option>
+                        <option value="edit">Editar</option>
+                        <option value="none">Sem Acesso</option>
+                    </select>
+                </td>
+                <td><button class="save-btn">Salvar</button></td>
+            </tr>
+            <tr>
+                <td>João Pereira</td>
+                <td>
+                    <select>
+                        <option value="view">Visualizar</option>
+                        <option value="edit">Editar</option>
+                        <option value="none">Sem Acesso</option>
+                    </select>
+                </td>
+                <td><button class="save-btn">Salvar</button></td>
+            </tr>
+            
+        </tbody>
+    </table>
+</div>
+</div>
+
+    
+<div class="data-table comments-section" id="comments" style="display:none;">
+    <div class="title">
+        <ion-icon name="chatbubbles-outline"></ion-icon>
+        <span class="text">Comentários de Clientes</span>
+    </div>
+
+    
+    <div class="comment-filters">
+        <button class="filter-btn active" onclick="filterComments('all')">Todos</button>
+        <button class="filter-btn" onclick="filterComments('feedback')">Feedback</button>
+        <button class="filter-btn" onclick="filterComments('question')">Perguntas</button>
+        <button class="filter-btn" onclick="filterComments('experience')">Experiências</button>
+    </div>
+
+    
+    <div class="comments-list">
+        <div class="comment-card" data-type="feedback">
+            <img src="/fotos/mariana alves.jpg" alt="Cliente 1">
+            <div class="comment-content">
+                <h4>Mariana Alves</h4>
+                <p>"A plataforma melhorou muito nossa gestão de clientes! Ótimo trabalho."</p>
+            </div>
+        </div>
+
+        <div class="comment-card" data-type="question">
+            <img src="/fotos/carlos.jpeg" alt="Cliente 2">
+            <div class="comment-content">
+                <h4>Carlos Andrade</h4>
+                <p>"Como posso integrar o sistema com o meu CRM atual?"</p>
+            </div>
+        </div>
+
+        <div class="comment-card" data-type="experience">
+            <img src="/fotos/fernanda.jpg" alt="Cliente 3">
+            <div class="comment-content">
+                <h4>Fernanda Costa</h4>
+                <p>"Desde que começamos a usar o sistema, vimos um aumento significativo na retenção de clientes."</p>
+            </div>
+        </div>
+
+        <div class="comment-card" data-type="feedback">
+            <img src="/fotos/joao.jpg" alt="Cliente 4">
+            <div class="comment-content">
+                <h4>João Pereira</h4>
+                <p>"Interface muito intuitiva e fácil de usar."</p>
+            </div>
+        </div>
+    </div>
+</div>
+    </section>
+
+    <script src="index.js"></script>
+    
+    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+    <script>
+        function filterComments(type) {
+    const comments = document.querySelectorAll('.comment-card');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+
+    
+    filterButtons.forEach(btn => btn.classList.remove('active'));
+    document.querySelector(`[onclick="filterComments('${type}')"]`).classList.add('active');
+
+   
+
+    comments.forEach(comment => {
+        if (type === 'all' || comment.getAttribute('data-type') === type) {
+            comment.style.display = 'flex';
+        } else {
+            comment.style.display = 'none';
+        }
+    });
+}
+    </script> 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    
+    const ctx = document.getElementById('userGrowthChart').getContext('2d');
+    const userGrowthChart = new Chart(ctx, {
+        type: 'line', 
+        data: {
+            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'], 
+            datasets: [{
+                label: 'Crescimento de Usuários', 
+                data: [120, 190, 300, 250, 350, 450], 
+                borderColor: 'rgba(29, 100, 194, 1)',
+                backgroundColor: 'rgba(29, 100, 194, 0.2)',
+                fill: true,
+                tension: 0.3 
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Número de Usuários'
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Meses'
+                    }
+                }
+            }
+        }
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const counters = document.querySelectorAll('.number'); 
+        const speed = 200; 
+
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+
+                const increment = target / speed;
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(updateCount, 30);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+
+            updateCount();
+        });
+    });
+</script>
+
+</body>
+</html>
